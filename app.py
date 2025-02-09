@@ -258,13 +258,12 @@
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-# from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings  # Changed import
+from langchain_community.vectorstores import Chroma
 from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 from langchain.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
-from langchain_community.vectorstores import Chroma  # Changed from langchain_chroma
 import os
 
 load_dotenv()
