@@ -264,6 +264,7 @@ from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 from langchain.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
+from langchain_community.vectorstores import Chroma  # Changed from langchain_chroma
 import os
 
 load_dotenv()
