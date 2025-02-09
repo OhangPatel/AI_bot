@@ -7,3 +7,7 @@ services:
     envVars:
       - key: HUGGINGFACE_API_KEY
         sync: false
+    disk:
+      name: chromadb
+      mountPath: /opt/render/project/src/chroma
+      sizeGB: 1

@@ -278,7 +278,8 @@ PORT = int(os.getenv("PORT", 8000))
 # Load environment variables
 load_dotenv()
 
-CHROMA_PATH = "chroma"
+# Update CHROMA_PATH to use absolute path
+CHROMA_PATH = os.getenv("CHROMA_PATH", "/opt/render/project/src/chroma")
 
 PROMPT_TEMPLATE = """
 You are a helpful assistant that provides clear and accurate answers based on the given context.
