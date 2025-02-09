@@ -258,7 +258,7 @@
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from langchain_chroma import Chroma
+# from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
