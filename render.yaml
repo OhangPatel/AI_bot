@@ -2,14 +2,16 @@ services:
   - type: web
     name: rag-api
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install -r requirements.txt
+      python create_database.py
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: HUGGINGFACE_API_KEY
         sync: false
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: CHROMA_PATH  # Add this if not already present
+      - key: CHROMA_PATH
         value: /opt/render/project/src/chroma
     disk:
       name: chromadb
